@@ -1,0 +1,192 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+/* Estilos para todos os botões */
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+/* Estilos específicos para o botão com a classe 'special' */
+button.special {
+  background-color: #ff5733;
+  color: white;
+  /* Outras propriedades personalizadas, se necessário */
+}
+
+/* Tema escuro */
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+body.dark-mode button {
+  background-color: #2d2d2d;
+  color: #ffffff;
+}
+body {
+  background-color: black; /* Define a cor de fundo para preto */
+  color: white; /* Define a cor do texto para branco */
+}
+/* Estilos para todos os botões */
+button {
+  background-color: #fdd835; /* Amarelo */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+/* Estilos específicos para o botão com a classe 'special' */
+button.special {
+  background-color: #ff5733;
+  color: white;
+  /* Outras propriedades personalizadas, se necessário */
+}
+
+/* Tema escuro */
+body.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+body.dark-mode button {
+  background-color: #fdd835; /* Nova cor de fundo para botões no tema escuro (amarelo) */
+  color: #ffffff; /* Nova cor do texto para botões no tema escuro */
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  padding: 15px 25px;
+}
+
+body.dark-mode button.special {
+  background-color: #ff5733; /* Nova cor de fundo para botões especiais no tema escuro */
+  color: white;
+}
+/* Estilos para todos os botões */
+button {
+  background-color: #fdd835; /* Amarelo */
+  color: white; /* Cor do texto dos botões no tema claro */
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: '𝐒𝐞𝐫𝐢𝐟 𝐁𝐨𝐥𝐝', sans-serif; /* Substitua 'SuaFonte' pela fonte desejada */
+}
+
+/* Estilos específicos para o botão com a classe 'special' */
+button.special {
+  background-color: #ff5733;
+  color: white;
+}
+
+/* Tema escuro */
+body.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+body.dark-mode button {
+  background-color: #fdd835; /* Amarelo */
+  color: white; /* Cor do texto dos botões no tema escuro */
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  padding: 15px 25px;
+}
+
+body.dark-mode button.special {
+  background-color: #ff5733;
+  color: white;
+}
+/* Estilos para todos os botões */
+
+/* Estilo básico para a barra de menu */
+    nav {
+      background-color: #ffcc00; /* Amarelo */
+      overflow: hidden;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      float: left;
+    }
+
+    nav a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    #conteudo {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #333;
+    }
+/* Estilo básico para a barra de menu */
+    nav {
+      background-color: #ffcc00; /* Amarelo */
+      overflow: hidden;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      float: left;
+    }
+
+    nav a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    #conteudo {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #333;
+    }
