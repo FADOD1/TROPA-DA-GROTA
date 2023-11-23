@@ -6,7 +6,75 @@
   <title>MLC</title>
   <link href="style.css" rel="stylesheet" type="text/css">
 </head>
-     
+     <title>Barra de Menu</title>
+  <style>
+    /* Estilo básico para a barra de menu */
+    nav {
+      background-color: #ffcc00; /* Amarelo */
+      overflow: hidden;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      float: left;
+    }
+
+    nav a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      cursor: pointer;
+      background-color: #ffcc00; /* Amarelo também */
+    }
+
+    nav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    #conteudo {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="#" onclick="mostrarConteudo('')">Home</a></li>
+      <li><a href="#" onclick="mostrarConteudo('EM BREVE')">Sobre</a></li>
+      <li><a href="#" onclick="mostrarConteudo('SEQUESTROS (OBS:APENAS NO GRUPO DE VENDAS, ASSASINATO , ROUBOS , ESCOLTA ,VENDA DE ARMAS (OBS:APENAS NO GRUPO DE VENDAS),ETC')">Serviços</a></li>
+      <li><a href="#" onclick="mostrarConteudo('https://wa.me/qr/S56YJMD3BJUZP1')">Contato</a></li>
+    </ul>
+  </nav>
+
+  <div id="conteudo">
+    <p>Conteúdo original da página.</p>
+  </div>
+
+  <script>
+    var conteudoOriginal = document.getElementById('conteudo').innerHTML;
+
+    function mostrarConteudo(texto) {
+      var conteudoDiv = document.getElementById('conteudo');
+      
+      if (texto === '') {
+        conteudoDiv.innerHTML = ''; // Não mostrar nada na Home
+      } else {
+        conteudoDiv.innerHTML = texto;
+        // Adicione sua lógica personalizada aqui
+      }
+    }
+  </script>
 <body>
   <div> 
     <h1>
@@ -87,82 +155,6 @@
            versão 1.0.1 // criador: @~Alan
         </p>
      </h5>
-          
-      
-      <head>
-
-      <title>Barra de Menu</title>
-  <style>
-    /* Estilo básico para a barra de menu */
-    nav {
-      background-color: #ffcc00; /* Amarelo */
-      overflow: hidden;
-    }
-
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav li {
-      float: left;
-    }
-
-    nav a {
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      cursor: pointer;
-      background-color: #ffcc00; /* Amarelo também */
-    }
-
-    nav a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-
-    #conteudo {
-      margin-top: 20px;
-      padding: 20px;
-      border: 1px solid #333;
-    }
-  </style>
-</head>
-<body>
-
-  <nav>
-    <ul>
-      <li><a href="#" onclick="mostrarConteudo('')">Home</a></li>
-      <li><a href="#" onclick="mostrarConteudo('EM BREVE')">Sobre</a></li>
-      <li><a href="#" onclick="mostrarConteudo('SEQUESTROS (OBS:APENAS NO GRUPO DE VENDAS, ASSASINATO , ROUBOS , ESCOLTA ,VENDA DE ARMAS (OBS:APENAS NO GRUPO DE VENDAS),ETC')">Serviços</a></li>
-      <li><a href="#" onclick="mostrarConteudo('https://wa.me/qr/S56YJMD3BJUZP1')">Contato</a></li>
-    </ul>
-  </nav>
-
-  <div id="conteudo">
-    <p>Conteúdo original da página.</p>
-  </div>
-
-  <script>
-    var conteudoOriginal = document.getElementById('conteudo').innerHTML;
-
-    function mostrarConteudo(texto) {
-      var conteudoDiv = document.getElementById('conteudo');
-      
-      if (texto === '') {
-        conteudoDiv.innerHTML = ''; // Não mostrar nada na Home
-      } else {
-        conteudoDiv.innerHTML = texto;
-        // Adicione sua lógica personalizada aqui
-      }
-    }
-  </script>
-      </head>
-        
-
   </style>
 </head>
 <body>
