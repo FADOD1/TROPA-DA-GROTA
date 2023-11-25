@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>MLC</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+  <style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    color: white; /* Define a cor do texto como branca */
+  }
+
+  #conteudo {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  #fundo-desfocado {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('background.jpeg') no-repeat fixed;
+    background-position: center top;
+    background-size: cover;
+    filter: blur(-5px); /* Ajuste o valor do desfoque conforme necessário */
+    z-index: -1;
+  }
+</style>
+<div id="fundo-desfocado"></div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var body = document.body;
+
+    window.addEventListener('scroll', function () {
+      var scrollPosition = window.scrollY;
+      body.style.backgroundPosition = `center ${scrollPosition}px`;
+    });
+
+    window.addEventListener('resize', function () {
+      body.style.backgroundPosition = 'center top';
+    });
+  });
+  
+</script>
+</head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-5FfLq5nmFQevVgDsHb1v/YIbYAAZuBxX/kWKL1dk5GTZQqzyeV2G8XZG6t0IsZW7ED1of4PgqRsCF4zTT+lmLw=="
+    crossorigin="anonymous" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 90vh;
+      overflow-x: hidden;
+      position: center;
+      color: white;
+    }
+
+    #fundo-desfocado {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('background.jpeg') no-repeat fixed;
+      background-position: center top;
+      background-size: cover;
+      filter: blur(5px);
+      z-index: -1;
+    }
+
+    .menu-icon {
+      cursor: pointer;
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      z-index: 2;
+    }
+
+    .menu-icon div {
+      width: 25px;
+      height: 3px;
+      background-color: #fdd835;
+      margin: 6px 0;
+      transition: background-color 0.3s;
+    }
+
+    .menu-options {
+      display: none;
+      position: fixed;
+      top: 40px;
+      right: 10px;
+      background-color: #fdd835;
+      padding: 10px;
+      border-radius: 5px;
+      z-index: 1;
+    }
+
+    .menu-options a {
+      color: white;
+      text-decoration: none;
+      margin-bottom: 10px;
+      display: block;
+      cursor: pointer;
+    }
+
+     .conteudo-quadrado {
+  display: none;
+  position: fixed;
+  top: 15%; /* Ajuste para definir a posição vertical */
+  left: 50%;
+  right: 0%;
+  transform: translate(-50%, -50%);
+  background-color: #fdd835;
+  padding: 10px;
+  border-radius: 20px;
+  z-index: 3;
+  margin-top: 0px;
+     }
+  </style>
+</head>
+
+<body>
+
+  <div id="fundo-desfocado"></div>
+
+  <div class="menu-icon" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div class="menu-options">
+    <a onclick="mostrarConteudo('')">|Home</a>
+    <a onclick="mostrarConteudo('EM BREVE')">Sobre</a>
+    <a
+      onclick="mostrarConteudo('SEQUESTROS (OBS:APENAS NO GRUPO DE VENDAS, ASSASINATO , ROUBOS , ESCOLTA ,VENDA DE ARMAS (OBS:APENAS NO GRUPO DE VENDAS),ETC')">|Serviços|</a>
+    <a onclick="mostrarConteudo('https://wa.me/qr/S56YJMD3BJUZP1')">|Contato|</a>
+  </div>
+
+  <div id="conteudo" class="conteudo-quadrado">
+    <p id="conteudo-texto">Conteúdo da página.</p>
+  </div>
+
+  <script>
+    function mostrarConteudo(texto) {
+      var conteudoQuadrado = document.getElementById('conteudo');
+      var conteudoTexto = document.getElementById('conteudo-texto');
+
+      if (texto === '') {
+        conteudoQuadrado.style.display = 'none';
+        conteudoTexto.innerHTML = ''; // Não mostrar nada na Home
+      } else {
+        conteudoTexto.innerHTML = texto;
+        conteudoQuadrado.style.display = 'block';
+        // Adicione sua lógica personalizada aqui
+      }
+
+      // Esconder o menu após clicar em uma opção
+      var menuOptions = document.querySelector('.menu-options');
+      menuOptions.style.display = 'none';
+    }
+
+    function toggleMenu() {
+      var menuOptions = document.querySelector('.menu-options');
+      var menuIcon = document.querySelector('.menu-icon');
+
+      if (menuOptions.style.display === 'flex') {
+        menuOptions.style.display = 'none';
+        menuIcon.style.backgroundColor = 'transparent';
+      } else {
+        menuOptions.style.display = 'flex';
+        menuIcon.style.backgroundColor = '#fdd835';
+      }
+    }
+  </script>
+
+</body>
+
+</html>
+</script>
+<body>
+  <style>
+    h1 {
+      margin-top: 110px; /* Ajuste o valor conforme necessário */
+    }
+  </style>
+    <h1>
+      MILICIA JOGA PURO!
+    </h1>
+  </div>
+  <img src="imagens/milicia.jpeg" alt= "MEMBROS DE LA MILICIA🦇" style="width: 50%;" />   
+  
+ <div>
+    <h2>
+"seja bem vindo a milicia joga puro 🦇"
+</h2>
+<div>
+
+  </style>
+  <title>SERVIDOR ATUAL</title>
+</head>
+<body
+
+</body>
+<body>
+    <a href="https://discord.com/invite/brasilplaylife1"><button>CIDADE ATUAL</button></a>
+</body>
+
+  <body>
+     <a href="https://discord.com/invite/KZgW8cQc"><button>DISCORD DE RECRUTAMENTO</button></a>
+  </body>
+  <head>
+     <h4>
+        Nos somos uma org/corp do jogo para Android/pc "samp" e temos o objetivo de trazer o melhor rp possível para o nosso servidor o "Brasil play life!" 
+     </h4>
+     
+  <head>
+     
+<head>
+   <head>
+        <h2>
+      REQUISITOS PARA ENTRAR EM NOSSA CORPORAÇÃO!
+        </h2>
+   </head>
+   <head>
+      <h4>
+        <p>
+           - Ter microfone e ter whatsapp
+        </p>
+         <p>
+            - Nivel +6 e +30 horas jogadas
+         </p>
+         <p>
+            - Ter Maturidade
+         </p>
+         <p>
+            - Ter boa cumunicação
+         </p>
+         <p>
+            - Ter boa visão de jogo
+         </p>
+         <p>
+            - Saber acatar ordens
+         </p>
+         <p>
+            - Respeito maximo com membros e superiores
+         </p>
+      </h4>
+      
+   </head>
+   <div>
+      <style>
+        .loja-container {
+            text-align: center; /* Alinha os elementos no centro */
+            margin-bottom: 20px;
+        }
+
+        .loja-img {
+            width: 300px;
+            margin-bottom: 10px;
+        }
+
+        .loja-button {
+            background-color: #fdd835;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #fff; /* Cor do texto branco */
+        }
+
+        .versao-creditos {
+            text-align: center;
+            font-size: 14px;
+            color: #777; /* Cor de texto cinza, pode ajustar conforme necessário */
+        }
+    </style>
+</head>
+<body>
+    <div class="loja-container">
+        <img class="loja-img" src="imagens/loja.PNG" alt="LOJA"/>
+        <br>
+        <a class="loja-button" href="https://chat.whatsapp.com/EcPkra1tZxZ90PKUW8hYWN">LOJA DE LA MILICIA</a>
+    </div>
+<body>
+<style>
+    /* Estilos para o botão */
+    .botao-amarelo {
+      background-color:  #fdd835;
+      padding: 10px 20px;
+      color: White;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Estilos para a lista oculta */
+    .lista-oculta {
+      display: none;
+      margin-top: 10px;
+    }
+
+    /* Estilos para os itens da lista */
+    .lista-oculta p {
+      margin: 5px 0;
+    }
+
+    /* Exibir a lista quando o botão é pressionado */
+    .botao-amarelo:focus + .lista-oculta {
+      display: block;
+    }
+  </style>
+<head>
+   <h2>
+      <p>
+         PARA VER OS PREÇOS DE NOSSOS SERVIÇOS BASTA APERTAR NESSES BOTÕES, CASO QUEIRA COMPRAR APÓS VER OS PREÇOS BASTA ENCOMENDAR NA NOSSA LOJA!
+      </p>
+   </h2>
+</head>
+<body>
+ <style>
+        .container {
+            text-align: center;
+        }
+
+        .botao-comprar, .botao-outro {
+            background-color: #fdd835;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #fff;
+            margin: 10px; /* Adiciona margem para espaçamento entre os botões */
+        }
+
+        .lista-oculta {
+            text-align: left; /* Ajusta o alinhamento do texto da lista */
+            display: none; /* Oculta inicialmente a lista */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="botao-comprar" onclick="toggleLista('lista-comprar')">TABELA ARMAS</button>
+
+        <!-- Lista Oculta -->
+        <div id="lista-comprar" class="lista-oculta">
+            <p>PISTOLA DESERT EAGLE - R$ 15.000</p>
+            <p>PISTOLA SILENCIADORA(VIP) - R$ 34.000</p>
+            <p>ESPINGARDA SHOTGUN - R$ 40.000</p>
+            <p>SUB-METRALHADORA MP5 - R$ 20.000</p>
+            <p>FUZIL AK-47(VIP) - R$ 50.000</p>
+            <p>FUZIL M4 - R$ 50.000</p>
+            <p>COUNTRY RIFLE(VIP) - R$ 100.000</p>
+            <p>SNIPER RIFLE - R$ 100.000</p>
+            <p>PARAQUEDAS - R$ 30.000</p>
+            <p>KATANA - R$ 25.000</p>
+            <p>(OBS: CASO QUEIRA COMPRAR O -KIT ARMA- O PREÇO É DE R$ 70.000)</p>
+        </div>
+
+        <button class="botao-outro" onclick="toggleLista('lista-outro')">TABELA SEQUESTRO</button>
+
+        <!-- Outra Lista Oculta -->
+        <div id="lista-outro" class="lista-oculta">
+     <p>CIVIL: R$ 50.000</p>
+    <p>CORP NEUTRA: R$ 100.000</p>
+    <p>CORP POLICIAL: R$ 50.000</p>
+    <p>ORG CRIMINOSA: R$ 150.000</p>
+    <p>GOVERNAMENTAL: R$ 200.000</p>
+    <p>(OBS: se for líder, o preço é de R$ 350.000, tanto faz sendo de corp ou org)</p>
+            <!-- Adicione mais itens conforme necessário -->
+        </div>
+    </div>
+
+    <script>
+        function toggleLista(id) {
+            var lista = document.getElementById(id);
+            lista.style.display = (lista.style.display === 'none') ? 'block' : 'none';
+        }
+    </script>
+  <head>
+     <style>
+        .container {
+            text-align: center;
+            margin-bottom: 20px; /* Adiciona espaço abaixo do conteúdo */
+        }
+
+        .botao-download {
+            background-color: #fdd835;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #fff;
+            margin: 10px; /* Adiciona margem para espaçamento entre os elementos */
+        }
+
+        .creditos {
+            margin-top: 700px; /* Adiciona espaço acima dos créditos */
+            color: #777; /* Cor de texto cinza, pode ajustar conforme necessário */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>
+            <p>
+                PARA BAIXAR NOSSA DATA OFICIAL BASTA CLICAR NO BOTÃO ABAIXO!
+            </p>
+        </h2>
+        <a href="https://download-data-milicia-todasasgpu.netlify.app/" class="botao-download">BAIXE NOSSA DATA AQUI</a>
+
+      
+
+        <!-- Créditos -->
+        <p class="creditos">
+            version 1.0.4 // Criado por @~Alan
+        </p>
+    </div>
+</body>
+  <html>
+
+  
